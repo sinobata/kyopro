@@ -9,20 +9,19 @@ namespace x
     {
         static void Main(string[] args)
         {
-
+            int[] array = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            Console.WriteLine(Lcm(array[0],array[1]));
         }
-    }
 
-    class Utils
-    {
         // 最小公倍数
         public static long Lcm(int a, int b) {
             return a * b / Gcd(a, b);
         }
 
-        // ユークリッドの互除法
+        // ユークリッドの互除法 
         public static long Gcd(int a, int b) {
             if (a < b)
+                // 引数を入替えて自分を呼び出す
                 return Gcd(b, a);
             while (b != 0) {
                 var remainder = a % b;

@@ -1,4 +1,5 @@
 
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,27 +10,18 @@ namespace x
     {
         static void Main(string[] args)
         {
-
-        }
-    }
-
-    class Utils
-    {
-        // 最小公倍数
-        public static long Lcm(int a, int b) {
-            return a * b / Gcd(a, b);
-        }
-
-        // ユークリッドの互除法
-        public static long Gcd(int a, int b) {
-            if (a < b)
-                return Gcd(b, a);
-            while (b != 0) {
-                var remainder = a % b;
-                a = b;
-                b = remainder;
+            string item1 = Console.ReadLine();
+            string item2 = Console.ReadLine();
+            string item3 = Console.ReadLine();
+            string[] inputArray = {item1, item2, item3};
+            string[] list = {"ABC" , "ARC" , "AGC" , "AHC"};
+            bool check = false;
+            for(int i = 0; i < list.Length; i++) {
+                check = Array.Exists(inputArray, x => x == list[i]);
+                if(!check) {
+                    Console.WriteLine(list[i]);
+                }
             }
-            return a;
         }
     }
 }
