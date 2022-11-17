@@ -1,4 +1,5 @@
 
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,29 +8,11 @@ namespace x
 {
     class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine(n+n*n+n*n*n);
 
-        }
-    }
-
-    class Utils
-    {
-        // 最小公倍数
-        public static long Lcm(int a, int b) {
-            return a * b / Gcd(a, b);
-        }
-
-        // ユークリッドの互除法
-        public static long Gcd(int a, int b) {
-            if (a < b)
-                return Gcd(b, a);
-            while (b != 0) {
-                var remainder = a % b;
-                a = b;
-                b = remainder;
-            }
-            return a;
         }
     }
 }

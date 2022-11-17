@@ -1,7 +1,8 @@
 
+
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 
 namespace x
 {
@@ -9,30 +10,30 @@ namespace x
     {
         public static void Main(string[] args)
         {
+            int s = int.Parse(Console.ReadLine());
+            HashSet<int> array = new HashSet<int>();
+            array.Add(s);
+            int n =s;
 
-        }
-    }
-
-    class Utils
-    {
-        // 最小公倍数
-        public static long Lcm(int a, int b) {
-            return a * b / Gcd(a, b);
-        }
-
-        // ユークリッドの互除法
-        public static long Gcd(int a, int b) {
-            if (a < b)
-                return Gcd(b, a);
-            while (b != 0) {
-                var remainder = a % b;
-                a = b;
-                b = remainder;
+            for(int i = 2; true;i++) {
+                int next;
+                if(n % 2 == 0) {
+                    next = n / 2;
+                } else {
+                    next = n * 3 + 1;
+                }
+                if(array.Contains(next)) {
+                    Console.WriteLine(i);
+                    return;
+                } else {
+                    array.Add(next);
+                }
+                n = next;
             }
-            return a;
         }
     }
 }
+
 
 // 文字列の入力
 // string s = Console.ReadLine();
@@ -88,3 +89,11 @@ namespace x
 //    }
 //  }
 
+
+// 100 → 200へ配列のサイズを変更
+// int[] array = new int[100];
+// Array.Resize(ref array, 200/*新しいサイズ*/);
+
+// // 201件目に要素を追加
+// Array.Resize(ref array, array.Length + 1);
+// array[Length -1] = 999;
