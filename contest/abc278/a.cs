@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,27 +8,15 @@ namespace x
     {
         public static void Main(string[] args)
         {
-
-        }
-    }
-
-    class Utils
-    {
-        // 最小公倍数
-        public static long Lcm(int a, int b) {
-            return a * b / Gcd(a, b);
-        }
-
-        // ユークリッドの互除法
-        public static long Gcd(int a, int b) {
-            if (a < b)
-                return Gcd(b, a);
-            while (b != 0) {
-                var remainder = a % b;
-                a = b;
-                b = remainder;
+            string[] line = Console.ReadLine().Split(' ').ToArray();
+            int N = int.Parse(line[0]);
+            int K = int.Parse(line[1]);
+            int[] A = new int[N];
+            int[] array = Console.ReadLine().Split().Select(int.Parse).ToArray();
+          	for(int i=K;i<N;i++) {
+              A[i - K] = array[i];
             }
-            return a;
+            Console.WriteLine(String.Join(' ', A));
         }
     }
 }
@@ -41,7 +28,7 @@ namespace x
 // long n = long.Parse(Console.ReadLine());
 
 // 文字列配列の入力
-// string[] inputStrArray = Console.ReadLine().Split(' ');
+// string[] inputStrArray = Console.ReadLine().Split(' ').ToArray();
 
 // 整数配列の入力
 // long[] inputLongArray = Console.ReadLine().Split(' ').Select(i => long.Parse(i)).ToArray();
@@ -49,6 +36,7 @@ namespace x
 
 //１つの値の出力
 //  Console.WriteLine(a);
+
 //  Console.WriteLine(String.Join(' ', array));
 
 // //複数の数字の出力

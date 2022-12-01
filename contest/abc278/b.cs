@@ -9,27 +9,9 @@ namespace x
     {
         public static void Main(string[] args)
         {
-
-        }
-    }
-
-    class Utils
-    {
-        // 最小公倍数
-        public static long Lcm(int a, int b) {
-            return a * b / Gcd(a, b);
-        }
-
-        // ユークリッドの互除法
-        public static long Gcd(int a, int b) {
-            if (a < b)
-                return Gcd(b, a);
-            while (b != 0) {
-                var remainder = a % b;
-                a = b;
-                b = remainder;
-            }
-            return a;
+            string s = Console.ReadLine();
+            string t = Console.ReadLine();
+            Console.WriteLine(s.Contains(t) ? "Yes" : "No");
         }
     }
 }
@@ -49,7 +31,6 @@ namespace x
 
 //１つの値の出力
 //  Console.WriteLine(a);
-//  Console.WriteLine(String.Join(' ', array));
 
 // //複数の数字の出力
 //  int e = 1;
