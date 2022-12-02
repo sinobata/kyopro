@@ -9,9 +9,24 @@ namespace x
     {
         public static void Main(string[] args)
         {
-            string s = Console.ReadLine();
-            string t = Console.ReadLine();
-            Console.WriteLine(s.Contains(t) ? "Yes" : "No");
+            string[] line = Console.ReadLine().Split(' ').ToArray();
+            int H = int.Parse(line[0]);
+            int M = int.Parse(line[1]);
+            while(true) {
+                if(M == 60) {
+                    M = 0;
+                    H ++;
+                }
+                if(H == 24) {
+                    H = 00;
+                }
+                if(H / 10 * 10 + M / 10 < 24 && H % 10 * 10 + M % 10 < 60) {
+                    Console.WriteLine("{0} {1}", H, M);
+                    break;
+                }
+                M++;
+            }
+
         }
     }
 }
